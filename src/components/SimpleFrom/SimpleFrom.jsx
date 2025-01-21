@@ -11,8 +11,10 @@ const SimpleFrom = () => {
         <div>
             <form onSubmit={handelSubmit}>
                 <input type="text" name='name'  />
-                <input type="text" name = 'email' />
-                <input type="text" name = 'phone' />
+                <br />
+                <input type="email" name = 'email' />
+                <br />
+                <input type="phone" name = 'phone' />
                 <br />
                 <input type="submit" value='submit'  />
             </form>
