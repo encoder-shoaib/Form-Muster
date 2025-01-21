@@ -1,13 +1,21 @@
 import { useState } from "react";
 
 const StateFullForm = () => {
-    const [name ,setName] = useState(null);
+    const [name ,setName] = useState('Shoaib Ahmmed');
     const [email ,setEmail] = useState(null);
     const [password ,setPassword] = useState(null);
+    const [error ,setError] = useState('')
     
     const handelSubmit = e =>{
         e.preventDefault();
-        console.log(name ,email,password)
+
+        if(password.length<6){
+            setError('password must be 6 character')
+        }
+        else{
+            setError('')
+            console.log(name ,email,password)
+        }
 
     }
     const handleNameChange = e =>{
@@ -25,7 +33,7 @@ const StateFullForm = () => {
     return (
         <div>              
             <form onSubmit={handelSubmit}>
-                <input onChange={handleNameChange} 
+                <input onChange={handleNameChange}  value={name}
                 type="text" name='name'  />
                 <br />
 
@@ -33,10 +41,14 @@ const StateFullForm = () => {
                 type="email" name = 'email' />
 
                 <br />
-                <input onChange={handlePhoneChange} type="password" name = 'phone' />
+                <input onChange={handlePhoneChange} type="password" name = 'phone' required />
                 <br />
                 <input type="submit" value='submit'  />
             </form>
+
+            {
+                error && <p>{error}</p>
+            }
 
         </div>
     );
