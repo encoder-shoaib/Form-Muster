@@ -11,7 +11,8 @@ const ReuseableForm = ({fromTile ,handelSubmit , submitBtnText= 'Submit',childre
     }
     return (
         <div>
-            <h2>{fromTile}</h2>
+            {/* <h2>{fromTile}</h2> */}
+            {children}
             <form onSubmit={handleLocalSubmit}>
                 <input type="text" name='name'  />
                 <br />

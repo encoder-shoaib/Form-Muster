@@ -25,8 +25,25 @@ function App() {
       {/* <StateFullForm></StateFullForm> */}
       {/* <RefFrom></RefFrom> */}
       {/* <HookFrom></HookFrom> */}
-      <ReuseableForm fromTile={'Sign Up'} handelSubmit={handleSingUpSubmit}></ReuseableForm>
-      <ReuseableForm fromTile={'Profile Update'} submitBtnText='Update' handelSubmit={handleProfileUpdateSubmit}></ReuseableForm>
+      <ReuseableForm 
+      fromTile={'Sign Up'} 
+      handelSubmit={handleSingUpSubmit}>
+        <div>
+          <h1>Sign UP</h1>
+          <p>please sign up now</p>
+        </div>
+      </ReuseableForm>
+
+
+      <ReuseableForm 
+      fromTile={'Profile Update'}
+      submitBtnText='Update'
+      handelSubmit={handleProfileUpdateSubmit}> 
+      <div>
+        <h1>Update Profile</h1>
+        <p>please update your profile</p>
+      </div>
+      </ReuseableForm>
 
     </>
   )
