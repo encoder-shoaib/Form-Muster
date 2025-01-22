@@ -1,3 +1,4 @@
+import Special from "../Special/Special";
 
 
 
@@ -6,6 +7,10 @@ const Cousin = ({name, asset}) => {
         <div>
             <h2>Cousin</h2>
             <p>{name}</p>
+            {
+                name ==='Rafsan' && <Special></Special> 
+            }
+            
         </div>
     );
 };

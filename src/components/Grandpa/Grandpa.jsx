@@ -1,21 +1,33 @@
+import { createContext, useState } from "react";
 import Aunty from "../Aunty/Aunty";
 import Dad from "../Dad/Dad";
 import Uncle from "../Uncle/Uncle";
 import './Grandpa.css';
 
-
+export const AssetsContext = createContext('gold');
+export const MoneyContext = createContext(1000);
 
 const Grandpa = () => {
 
+    const assets = 'diamond'
+
+    const [money ,setMoney ] = useState(1000);
     
     return (
         <div className="grandpa">
             <h2>Grandpa</h2>
+
+            <p>money: {money}</p>
+            <MoneyContext.Provider value={[money ,setMoney]}>
+            <AssetsContext.Provider value="Gold">
             <section className="flex">
-                        <Dad></Dad>
+                        <Dad assets ={assets}></Dad>
                         <Uncle></Uncle>
                         <Aunty></Aunty>
             </section>
+            </AssetsContext.Provider>
+            </MoneyContext.Provider>
+
 
 
         </div>
